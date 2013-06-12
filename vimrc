@@ -21,7 +21,7 @@ if has('gui_running')
 else
   set background=dark
 endif
-color railscasts
+color jellybeans
 set synmaxcol=800           " don't try to highlight long lines
 
 set nonumber    " line numbers aren't needed
@@ -59,7 +59,7 @@ if v:version > 703 || v:version == 703 && has("patch541")
 endif
 set nojoinspaces                  " Use only 1 space after "." when joining lines, not 2
 " Indicator chars
-set listchars=tab:▸\ ,trail:•,extends:❯,precedes:❮
+set listchars=tab:▸\ ,extends:❯,precedes:❮
 set showbreak=↪\ 
 
 "" Searching
