@@ -170,14 +170,6 @@ map <Right> :echo "no!"<cr>
 map <Up>    :echo "no!"<cr>
 map <Down>  :echo "no!"<cr>
 
-if has("statusline") && !&cp
-  set laststatus=2              " always show the status bar
-  set statusline=%f\ %m\ %r     " filename, modified, readonly
-  set statusline+=%{fugitive#statusline()}
-  set statusline+=\ %l/%L[%p%%] " current line/total lines
-  set statusline+=\ %v[0x%B]    " current column [hex char]
-endif
-
 ""  Fix normal jk movement
 nnoremap j gj
 nnoremap k gk
@@ -222,6 +214,7 @@ set undofile
 " Status line
 if has('statusline')
   set laststatus=2
+  set noshowmode
   set statusline=%<%f\                     " Filename
   set statusline+=%w%h%m%r                 " Options
   set statusline+=%{fugitive#statusline()} " Git Hotness
@@ -229,3 +222,7 @@ if has('statusline')
   set statusline+=\ [%{getcwd()}]          " Current dir
   set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 endif
+
+" powerline (enabling)
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
