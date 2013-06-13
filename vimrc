@@ -204,3 +204,13 @@ set foldlevel=1         "this is just what i use
 " mouse!
 set mouse=a
 set mousehide
+
+" No swap files
+set noswapfile
+set nobackup
+set nowritebackup
+
+" Persistent Undo
+silent !mkdir ~/.vim/backups > /dev/null 2>&1
+set undodir=~/.vim/backups
+set undofile
