@@ -176,3 +176,21 @@ if has("statusline") && !&cp
   set statusline+=\ %l/%L[%p%%] " current line/total lines
   set statusline+=\ %v[0x%B]    " current column [hex char]
 endif
+
+""  Fix normal jk movement
+nnoremap j gj
+nnoremap k gk
+
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+set pastetoggle=<F3>
+
+""  Ack
+nnoremap <leader>a :Ack!
+
+""  Reselect pasted text
+nnoremap <leader>v V`]
+
+""  Create new split
+nnoremap <leader>w <C-w>v<C-w>l
+
