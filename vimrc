@@ -17,7 +17,7 @@ runtime macros/matchit.vim  " enables % to cycle through `if/else/endif`
 
 syntax enable
 set background=dark
-color jellybeans
+color Monokai
 set synmaxcol=800           " don't try to highlight long lines
 
 set nonumber    " line numbers aren't needed
@@ -161,14 +161,20 @@ nnoremap <leader><leader> <c-^>
 
 command! KillWhitespace :normal :%s/ *$//g<cr><c-o><cr>
 
+" easier navigation between split windows
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
 set splitright
 set splitbelow
 
 " disable cursor keys in normal mode
-map <Left>  :echo "no!"<cr>
-map <Right> :echo "no!"<cr>
-map <Up>    :echo "no!"<cr>
-map <Down>  :echo "no!"<cr>
+" map <Left>  :echo "no!"<cr>
+" map <Right> :echo "no!"<cr>
+" map <Up>    :echo "no!"<cr>
+" map <Down>  :echo "no!"<cr>
 
 ""  Fix normal jk movement
 nnoremap j gj
