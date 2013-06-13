@@ -26,7 +26,7 @@ set synmaxcol=800           " don't try to highlight long lines
 
 set nonumber    " line numbers aren't needed
 set ruler       " show the cursor position all the time
-set cursorline  " highlight the line of the cursor
+" set cursorline  " highlight the line of the cursor
 set showcmd     " show partial commands below the status line
 set shell=bash  " avoids munging PATH under zsh
 let g:is_bash=1 " default shell syntax
@@ -68,6 +68,7 @@ set incsearch                     " incremental searching
 set ignorecase                    " searches are case insensitive...
 set smartcase                     " ... unless they contain at least one capital letter
 set gdefault                      " have :s///g flag by default on
+set showmatch
 
 " Time out on key codes but not mappings.
 " Basically this makes terminal Vim work sanely.
@@ -154,6 +155,10 @@ set wildignore+=tmp/**,*.rbc,.rbx,*.scssc,*.sassc
 " ignore Bundler standalone/vendor installs & gems
 set wildignore+=bundle/**,vendor/bundle/**,vendor/cache/**
 set wildignore+=node_modules/**
+
+" nice tab completion on : commands
+set wildmenu
+set wildmode=longest:full,full
 
 " toggle between last open buffers
 nnoremap <leader><leader> <c-^>
