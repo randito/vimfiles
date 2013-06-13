@@ -55,9 +55,6 @@
 [submodule "bundle/eunuch"]
 	path = bundle/eunuch
 	url = https://github.com/tpope/vim-eunuch
-[submodule "bundle/turbux"]
-	path = bundle/turbux
-	url = https://github.com/jgdavey/vim-turbux
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim
