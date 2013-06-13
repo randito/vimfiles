@@ -16,11 +16,7 @@ filetype plugin indent on
 runtime macros/matchit.vim  " enables % to cycle through `if/else/endif`
 
 syntax enable
-if has('gui_running')
-  set background=light
-else
-  set background=dark
-endif
+set background=dark
 color jellybeans
 set synmaxcol=800           " don't try to highlight long lines
 
@@ -205,3 +201,6 @@ set foldnestmax=10      "deepest fold is 10 levels
 set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 
+" mouse!
+set mouse=a
+set mousehide
