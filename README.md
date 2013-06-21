@@ -1,16 +1,9 @@
-Mislav's vim configuration
-==========================
+Copy, Paste, Modified from Mislav's vim configuration
+=====================================================
+[Mislav's Vim configuration](http://mislav.uniqpath.com/2011/12/vim-revisited/)
 
-Thanks to these guys:
-
-* [Gary Bernhardt](http://destroyallsoftware.com),
-* [Drew Neil](http://vimcasts.org),
-* [Tim Pope](http://tbaggery.com),
-* and the [Janus project](https://github.com/carlhuda/janus).
-
-My configuration uses [Pathogen](https://github.com/tpope/vim-pathogen) and git submodules.
-(But you don't need to care about any of that.)
-
+Examples how to specify a pane: windowtitle.2, top-right, or last; or let it
+default to the previously given argument.
 ## Installation:
 
 Prerequisites: ruby, git.
@@ -35,7 +28,6 @@ files inside the ".vim" directory.
 * cursor keys for movement are disabled!
 
 * `<CR>` - remove highlighting after search
-* `<Space>` - toggle current fold
 * `<C-j/k/h/l>` - switch between splits (no need to prepend `<C-w>`)
 * `Q` - format lines
 * `:KillWhitespace` - strip trailing whitespace
@@ -190,54 +182,3 @@ In vimdiff view:
 * `:diffu[pdate]` - refresh diff highlighting
 * `:on[ly]`,`<C-w>o` - close windows other than the current one
 
-### Unimpaired
-
-* `[a`/`]a` - `:previous`/`:next`
-* `[A`/`]A` - `:first`/`:last`
-* `[q`/`]q` - `:cprev`/`:cnext`
-* `[Q`/`]Q` - `:cfirst`/`:clast`
-
-* `[n`/`]n` - previous/next conflict marker
-* `[<Space>`/`]<Space>` - add blank lines above/below the cursor
-
-* `[o{opt}`/`]o{opt}`/`co{opt}` - turn on/turn off/toggle option:
-  * `h` - "hlsearch"
-  * `i` - "ignorecase"
-  * `s` - "spell"
-  * `w` - "wrap"
-
-* `yp/P/o/O/I/A` enters insert mode as with `a/i/o/O/I/A` and sets `paste`.
-  Leaving insert mode sets 'nopaste' automatically.
-
-### Eunuch
-
-* `:Rename[!]`
-* `:SudoWrite`
-* `:Remove[!]`
-* `:Find[!] {args}` - run `find` and load results into quickfix
-* when you create a file that starts with a shebang, it gets `chmod +x`
-  automatically on first save!
-
-### Scriptease
-
-* `:Vedit` - quickly open a Vim runtime file
-  * `:Vsplit`
-  * `:Vvsplit`
-  * `:Vtabedit`
-  * `:Vpedit`
-  * `:Vread`
-* `:Runtime` - reload runtime files
-* `g!` - eval a motion or selection as VimL and replace it with the result
-
-Example:
-
-    :Vsp s/pd<Tab>
-
-### Tbone
-
-* `:Tmux [args]` - execute a tmux command
-* `:[range]Tyank/:Tput [buffer]` - access to tmux buffer
-* `:[range]Twrite [pane]` - `tmux send-keys` to another pane
-
-Examples how to specify a pane: windowtitle.2, top-right, or last; or let it
-default to the previously given argument.
