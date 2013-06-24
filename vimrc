@@ -42,6 +42,10 @@ set updatecount=0
 " Make Vim able to edit crontab files again.
 set backupskip=/tmp/*,/private/tmp/*"
 
+" Allow tab to be used for autocompletion
+imap <Tab> <C-N>
+imap <S-Tab> <C-P>
+
 "" Whitespace
 set nowrap                        " don't wrap lines
 set tabstop=2                     " a tab is two spaces
@@ -126,16 +130,23 @@ let mapleader=","
 nmap <leader>p pV`]=
 nmap <leader>P PV`]=
 
+" yank/paste to system register
+map <leader>ys "*y<cr>
+map <leader>ps "*p<cr>
+
 " http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
+map <leader>f :CtrlP<cr>
 map <leader>F :CtrlP %%<cr>
 map <leader>b :CtrlPBuffer<cr>
-" let g:ctrlp_root_markers = ['.git', 'Rakefile']
+
+let g:ctrlp_root_markers = ['.git', 'Rakefile']
 let g:ctrlp_working_path_mode = 0
 " let g:ctrlp_extensions = ['tag', 'buffertag']
+let g:ctrlp_custom_ignore = { 'dir': '\v[\/](\.bundle|bundle|coverage|log)$' }
 
-let g:turbux_command_test_unit = 'ruby -Ilib:test'
+" let g:turbux_command_test_unit = 'ruby -Ilib:test'
 " let g:turbux_command_cucumber = 'cucumber -f progress'
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
