@@ -154,7 +154,7 @@ set wildmenu
 set wildmode=longest:full,full
 
 " toggle between last open buffers
-nnoremap <leader><leader> <c-^>
+" nnoremap <leader><leader> <c-^>
 
 command! KillWhitespace :normal :%s/ *$//g<cr><c-o><cr>
 
