@@ -139,6 +139,7 @@ map <leader>r gg=G
 map <leader>f :CtrlP<cr>
 map <leader>F :CtrlPMRUFiles<cr>
 map <leader>b :CtrlPBuffer<cr>
+map <leader>B :CtrlPBufTag<cr>
 
 let g:ctrlp_root_markers = ['.git', 'Rakefile']
 let g:ctrlp_working_path_mode = 0
