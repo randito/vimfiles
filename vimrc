@@ -22,7 +22,7 @@ set synmaxcol=800           " don't try to highlight long lines
 
 set nonumber    " line numbers aren't needed
 set ruler       " show the cursor position all the time
-" set cursorline  " highlight the line of the cursor
+set cursorline  " highlight the line of the cursor
 set showcmd     " show partial commands below the status line
 set shell=bash  " avoids munging PATH under zsh
 let g:is_bash=1 " default shell syntax
