@@ -42,10 +42,6 @@ set updatecount=0
 " Make Vim able to edit crontab files again.
 set backupskip=/tmp/*,/private/tmp/*"
 
-" Allow tab to be used for autocompletion
-imap <Tab> <C-N>
-imap <S-Tab> <C-P>
-
 "" Whitespace
 set nowrap                        " don't wrap lines
 set tabstop=2                     " a tab is two spaces
@@ -105,7 +101,7 @@ if has("autocmd")
   " Remember last location in file, but not for commit messages.
   " see :help last-position-jump
   au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal! g`\"" | endif
+        \| exe "normal! g`\"" | endif
 
   " mark Jekyll YAML frontmatter as comment
   au BufNewFile,BufRead *.{md,markdown,html,xml} sy match Comment /\%^---\_.\{-}---$/
@@ -137,8 +133,11 @@ map <leader>ps "*p<cr>
 " http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
+" reindent whole file.. jump back to original spot via mark x
+map <leader>r gg=G
+
 map <leader>f :CtrlP<cr>
-map <leader>F :CtrlP %%<cr>
+map <leader>F :CtrlPMRUFiles<cr>
 map <leader>b :CtrlPBuffer<cr>
 
 let g:ctrlp_root_markers = ['.git', 'Rakefile']
@@ -222,8 +221,8 @@ set undodir=~/.vim/backups
 set undofile
 
 " Stay in visual mode for indents
-  vnoremap < <gv
-  vnoremap > >gv
+vnoremap < <gv
+vnoremap > >gv
 
 " Status line
 if has('statusline')
