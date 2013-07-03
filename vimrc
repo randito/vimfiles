@@ -139,7 +139,7 @@ map <leader>r gg=G
 map <leader>f :CtrlP<cr>
 map <leader>F :CtrlPMRUFiles<cr>
 map <leader>b :CtrlPBuffer<cr>
-map <leader>B :CtrlPBufTag<cr>
+map <leader>B :CtrlPBuffer<cr>
 
 let g:ctrlp_root_markers = ['.git', 'Rakefile']
 let g:ctrlp_working_path_mode = 0
@@ -200,6 +200,9 @@ nnoremap <leader>v V`]
 
 ""  Create new split
 nnoremap <leader>w <C-w>v<C-w>l
+
+"" Close window
+nnoremap <leader>q <c-w>q
 
 "folding settings
 set foldmethod=indent   "fold based on indent
