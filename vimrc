@@ -240,6 +240,13 @@ if has('statusline')
   set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 endif
 
+" vim-airline (a simplier powerline alternative)
+let g:airline_enable_fugitive=1
+let g:airline_theme='badwolf'
+" let g:airline_enable_syntastic=1
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+
 " json.  From vim-json plugin.  Reformat from yajl (brew install yajl)
 autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd FileType json set equalprg=json_reformat
