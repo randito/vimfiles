@@ -240,10 +240,6 @@ if has('statusline')
   set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 endif
 
-" powerline (enabling)
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-set t_Co=256
-
 " json.  From vim-json plugin.  Reformat from yajl (brew install yajl)
 autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd FileType json set equalprg=json_reformat
