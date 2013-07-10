@@ -165,11 +165,10 @@ set wildmenu
 set wildmode=longest:full,full
 
 "ctags
-map <silent><C-[> <C-T>
-" map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-" map <M-T> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-imap <F3> <Esc>:TagbarToggle<CR>
-nmap <F3> <Esc>:TagbarToggle<CR>
+noremap <C-[> <C-T>
+imap <Leader>tt :TagbarToggle<cr>
+nmap <Leader>tt :TagbarToggle<cr>
+map <Leader>tr :!ctags -R --exclude='*min.js' --exclude='*ckeditor*' --exclude='*jquery-ui*' --exclude='*jquerycontextMenu*' .<cr>
 
 " toggle between last open buffers
 " nnoremap <leader><leader> <c-^>
