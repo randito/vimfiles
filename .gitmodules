@@ -46,9 +46,6 @@
 [submodule "bundle/liquid"]
 	path = bundle/liquid
 	url = https://github.com/tpope/vim-liquid
-[submodule "bundle/markdown-folding"]
-	path = bundle/markdown-folding
-	url = https://github.com/nelstrom/vim-markdown-folding
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim
