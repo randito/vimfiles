@@ -164,6 +164,13 @@ set wildignore+=node_modules/**
 set wildmenu
 set wildmode=longest:full,full
 
+"ctags
+map <silent><C-[> <C-T>
+" map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" map <M-T> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+imap <F3> <Esc>:TagbarToggle<CR>
+nmap <F3> <Esc>:TagbarToggle<CR>
+
 " toggle between last open buffers
 " nnoremap <leader><leader> <c-^>
 
