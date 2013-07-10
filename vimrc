@@ -251,3 +251,8 @@ let g:airline_right_sep = '◀'
 autocmd BufRead,BufNewFile *.json set filetype=json
 autocmd FileType json set equalprg=json_reformat
 
+" Disable folding
+set nofoldenable
+
+" Use the system clipboard as the default 
+set clipboard=unnamed
