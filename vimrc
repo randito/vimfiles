@@ -164,6 +164,12 @@ set wildignore+=node_modules/**
 set wildmenu
 set wildmode=longest:full,full
 
+" Nerdtree
+
+let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
+map <leader>n :NERDTreeToggle<CR> :NERDTreeMirror<CR>
+map <leader>N :NERDTreeFind<cr>
+
 "ctags
 " noremap <C-[> <C-T>
 imap <leader>tt :TagbarToggle<cr>
