@@ -145,9 +145,13 @@ let g:ctrlp_root_markers = ['.git', 'Rakefile']
 let g:ctrlp_working_path_mode = 0
 " let g:ctrlp_extensions = ['tag', 'buffertag']
 let g:ctrlp_custom_ignore = { 'dir': '\v[\/](\.bundle|bundle|coverage|log)$' }
-
-" let g:turbux_command_test_unit = 'ruby -Ilib:test'
-" let g:turbux_command_cucumber = 'cucumber -f progress'
+" let g:ctrlp_reuse_window = 'netrw'
+let g:ctrlp_prompt_mappings = {
+  \ 'PrtSelectMove("j")':   ['<c-n>', '<down>'],
+  \ 'PrtSelectMove("k")':   ['<c-p>', '<up>'],
+  \ 'PrtHistory(-1)':       ['<c-k>'],
+  \ 'PrtHistory(1)':        ['<c-j>'],
+  \ }
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
@@ -166,52 +170,53 @@ set wildmode=longest:full,full
 
 " Nerdtree
 
-let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
-map <leader>n :NERDTreeToggle<CR> :NERDTreeMirror<CR>
-map <leader>N :NERDTreeFind<cr>
+  let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
+  map <leader>n :NERDTreeToggle<CR> :NERDTreeMirror<CR>
+  map <leader>N :NERDTreeFind<cr>
 
-"ctags
-" noremap <C-[> <C-T>
-imap <leader>tt :TagbarToggle<cr>
-nmap <leader>tt :TagbarToggle<cr>
-map <leader>tr :!ctags -R --exclude='*min.js' --exclude='*ckeditor*' --exclude='*jquery-ui*' --exclude='*jquerycontextMenu*' .<cr>
+  "ctags
+  " noremap <C-[> <C-T>
+  imap <leader>tt :TagbarToggle<cr>
+  nmap <leader>tt :TagbarToggle<cr>
+  map <leader>tr :!ctags -R --exclude='*min.js' --exclude='*ckeditor*' --exclude='*jquery-ui*' --exclude='*jquerycontextMenu*' .<cr>
 
-" toggle between last open buffers
-" nnoremap <leader><leader> <c-^>
+  " toggle between last open buffers
+  " nnoremap <leader><leader> <c-^>
 
-command! KillWhitespace :normal :%s/ *$//g<cr><c-o><cr>
+  command! KillWhitespace :normal :%s/ *$//g<cr><c-o><cr>
+  nnoremap <leader>kw :%s/\s\+$//<cr>:let @/=''<CR>
 
-" easier navigation between split windows
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
+  " easier navigation between split windows
+  nnoremap <c-j> <c-w>j
+  nnoremap <c-k> <c-w>k
+  nnoremap <c-h> <c-w>h
+  nnoremap <c-l> <c-w>l
 
-set splitright
-set splitbelow
+  set splitright
+  set splitbelow
 
-" disable cursor keys in normal mode
-" map <Left>  :echo "no!"<cr>
-" map <Right> :echo "no!"<cr>
-" map <Up>    :echo "no!"<cr>
-" map <Down>  :echo "no!"<cr>
+  " disable cursor keys in normal mode
+  " map <Left>  :echo "no!"<cr>
+  " map <Right> :echo "no!"<cr>
+  " map <Up>    :echo "no!"<cr>
+  " map <Down>  :echo "no!"<cr>
 
-""  Fix normal jk movement
-nnoremap j gj
-nnoremap k gk
+  ""  Fix normal jk movement
+  nnoremap j gj
+  nnoremap k gk
 
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
-set pastetoggle=<F3>
+  nmap <silent> <leader>ev :e $MYVIMRC<CR>
+  nmap <silent> <leader>sv :so $MYVIMRC<CR>
+  set pastetoggle=<F3>
 
-""  Ack
-nnoremap <leader>a :Ack!
+  ""  Ack
+  nnoremap <leader>a :Ack!
 
-""  Reselect pasted text
-nnoremap <leader>v V`]
+  ""  Reselect pasted text
+  nnoremap <leader>v V`]
 
-""  Create new split
-nnoremap <leader>w <C-w>v<C-w>l
+  ""  Create new split
+  nnoremap <leader>W <C-w>v<C-w>l
 
 "" Close window
 nnoremap <leader>q <c-w>q
