@@ -56,7 +56,7 @@ endif
 set nojoinspaces                  " Use only 1 space after "." when joining lines, not 2
 " Indicator chars
 set listchars=tab:▸\ ,extends:❯,precedes:❮
-set showbreak=↪\ 
+set showbreak=↪\
 
 "" Searching
 set hlsearch                      " highlight matches
@@ -126,9 +126,9 @@ let mapleader=","
 nmap <leader>p pV`]=
 nmap <leader>P PV`]=
 
-" yank/paste to system register
-map <leader>ys "*y<cr>
-map <leader>ps "*p<cr>
+" " yank/paste to system register
+" map <leader>ys "*y<cr>
+" map <leader>ps "*p<cr>
 
 " http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
@@ -152,6 +152,7 @@ let g:ctrlp_prompt_mappings = {
   \ 'PrtHistory(-1)':       ['<c-k>'],
   \ 'PrtHistory(1)':        ['<c-j>'],
   \ }
+let g:ctrlp_regexp = 1
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
@@ -170,53 +171,53 @@ set wildmode=longest:full,full
 
 " Nerdtree
 
-  let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
-  map <leader>n :NERDTreeToggle<CR> :NERDTreeMirror<CR>
-  map <leader>N :NERDTreeFind<cr>
+let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
+map <leader>n :NERDTreeToggle<CR> :NERDTreeMirror<CR>
+map <leader>N :NERDTreeFind<cr>
 
-  "ctags
-  " noremap <C-[> <C-T>
-  imap <leader>tt :TagbarToggle<cr>
-  nmap <leader>tt :TagbarToggle<cr>
-  map <leader>tr :!ctags -R --exclude='*min.js' --exclude='*ckeditor*' --exclude='*jquery-ui*' --exclude='*jquerycontextMenu*' .<cr>
+"ctags
+" noremap <C-[> <C-T>
+imap <leader>tt :TagbarToggle<cr>
+nmap <leader>tt :TagbarToggle<cr>
+map <leader>tr :!ctags -R --exclude='*min.js' --exclude='*ckeditor*' --exclude='*jquery-ui*' --exclude='*jquerycontextMenu*' .<cr>
 
-  " toggle between last open buffers
-  " nnoremap <leader><leader> <c-^>
+" toggle between last open buffers
+" nnoremap <leader><leader> <c-^>
 
-  command! KillWhitespace :normal :%s/ *$//g<cr><c-o><cr>
-  nnoremap <leader>kw :%s/\s\+$//<cr>:let @/=''<CR>
+command! KillWhitespace :normal :%s/ *$//g<cr><c-o><cr>
+nnoremap <leader>kw :%s/\s\+$//<cr>:let @/=''<CR>
 
-  " easier navigation between split windows
-  nnoremap <c-j> <c-w>j
-  nnoremap <c-k> <c-w>k
-  nnoremap <c-h> <c-w>h
-  nnoremap <c-l> <c-w>l
+" easier navigation between split windows
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
-  set splitright
-  set splitbelow
+set splitright
+set splitbelow
 
-  " disable cursor keys in normal mode
-  " map <Left>  :echo "no!"<cr>
-  " map <Right> :echo "no!"<cr>
-  " map <Up>    :echo "no!"<cr>
-  " map <Down>  :echo "no!"<cr>
+" disable cursor keys in normal mode
+" map <Left>  :echo "no!"<cr>
+" map <Right> :echo "no!"<cr>
+" map <Up>    :echo "no!"<cr>
+" map <Down>  :echo "no!"<cr>
 
-  ""  Fix normal jk movement
-  nnoremap j gj
-  nnoremap k gk
+""  Fix normal jk movement
+nnoremap j gj
+nnoremap k gk
 
-  nmap <silent> <leader>ev :e $MYVIMRC<CR>
-  nmap <silent> <leader>sv :so $MYVIMRC<CR>
-  set pastetoggle=<F3>
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
+set pastetoggle=<F3>
 
-  ""  Ack
-  nnoremap <leader>a :Ack!
+""  Ack
+nnoremap <leader>a :Ack!
 
-  ""  Reselect pasted text
-  nnoremap <leader>v V`]
+""  Reselect pasted text
+nnoremap <leader>v V`]
 
-  ""  Create new split
-  nnoremap <leader>W <C-w>v<C-w>l
+""  Create new split
+nnoremap <leader>W <C-w>v<C-w>l
 
 "" Close window
 nnoremap <leader>q <c-w>q
@@ -271,5 +272,8 @@ autocmd FileType json set equalprg=json_reformat
 " Disable folding
 set nofoldenable
 
-" Use the system clipboard as the default 
+" Use the system clipboard as the default
 set clipboard=unnamed
+
+
+
