@@ -133,8 +133,8 @@ nmap <leader>P PV`]=
 " http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-" reindent whole file.. jump back to original spot via mark x
-map <leader>r gg=G
+" select whole file
+map <leader>sa ggVG
 
 map <leader>f :CtrlP<cr>
 map <leader>F :CtrlPMRUFiles<cr>
@@ -147,11 +147,11 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_custom_ignore = { 'dir': '\v[\/](\.bundle|bundle|coverage|log)$' }
 " let g:ctrlp_reuse_window = 'netrw'
 let g:ctrlp_prompt_mappings = {
-  \ 'PrtSelectMove("j")':   ['<c-n>', '<down>'],
-  \ 'PrtSelectMove("k")':   ['<c-p>', '<up>'],
-  \ 'PrtHistory(-1)':       ['<c-k>'],
-  \ 'PrtHistory(1)':        ['<c-j>'],
-  \ }
+      \ 'PrtSelectMove("j")':   ['<c-n>', '<down>'],
+      \ 'PrtSelectMove("k")':   ['<c-p>', '<up>'],
+      \ 'PrtHistory(-1)':       ['<c-k>'],
+      \ 'PrtHistory(1)':        ['<c-j>'],
+      \ }
 let g:ctrlp_regexp = 1
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
