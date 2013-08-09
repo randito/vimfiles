@@ -1,9 +1,7 @@
 Copy, Paste, Modified from Mislav's vim configuration
 =====================================================
-[Mislav's Vim configuration](http://mislav.uniqpath.com/2011/12/vim-revisited/)
+See [Mislav's Vim configuration](http://mislav.uniqpath.com/2011/12/vim-revisited/) for inspiration.
 
-Examples how to specify a pane: windowtitle.2, top-right, or last; or let it
-default to the previously given argument.
 ## Installation:
 
 Prerequisites: ruby, git.
@@ -32,25 +30,25 @@ files inside the ".vim" directory.
 * `Q` - format lines
 * `:KillWhitespace` - strip trailing whitespace
 
-### File switching (CtrlP)
+### File switching (Command-T)
 
-* `,,` - toggle between two recently open buffers
-* `<C-p>` - fuzzy file search
-* `<C-P>` - search in directory of current buffer
-* `:CtrlP [dir]` - search files
-* `:CtrlBuffer` - search buffers
-* `:CtrlPTag` - search tags
-* `:CtrlPBufTag` - search tags in current buffer
-* `:CtrlPMixed` - search in files, buffers and MRU
+* `,f` - fuzzy file search
+* `,F` - fuzzy file search within the current directory
+* `,b` - fuzzy search your current buffers
 
-Inside the CtrlP prompt:
+Within the Command-T prompt:
 
 * `<C-j/k>` - move down/up between file matches
-* `<C-n/p>` - next/previous string in prompt's history
+* `<C-n/p>` - move down/up between file matches
 * `<C-s/v>` - open file in new horizontal/vertical split
-* `<C-y>` - create a new file and its parent directories
-* `<C-z>` - mark a file to be opened with `<C-o>`
-* `<C-o>` - open marked files
+* `<C-c>`   - close the window
+
+Command-T is build using Ruby and requires you to build
+vim with Ruby support.
+
+Using rbenv, I needed to rebuild vim and the Command-T plugin using the same version of Ruby.
+
+See [this excellent post](http://jeroenbourgois.be/command-t-macvim-and-rvm/) for more information.
 
 ### Ack
 
@@ -126,6 +124,13 @@ Text objects:
 
 `%` alternates between matching HTML tags, class/control flow statements and
 matching `end` in Ruby, and more. Also works in visual mode.
+
+### Line numbers
+
+Uses the vim `numbers` plugin to provide relative and absolute line numbers.
+
+See the [numbers github project](https://github.com/myusuf3/numbers.vim) for
+more information.
 
 ### Tabular
 
