@@ -136,28 +136,18 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 " select whole file
 map <leader>sa ggVG
 
-map <leader>f :CtrlP<cr>
-map <leader>F :CtrlPMRUFiles<cr>
-map <leader>b :CtrlPBuffer<cr>
-map <leader>B :CtrlPBuffer<cr>
-
-let g:ctrlp_root_markers = ['.git', 'Rakefile']
-let g:ctrlp_working_path_mode = 0
-" let g:ctrlp_extensions = ['tag', 'buffertag']
-let g:ctrlp_custom_ignore = { 'dir': '\v[\/](\.bundle|bundle|coverage|log)$' }
-" let g:ctrlp_reuse_window = 'netrw'
-let g:ctrlp_prompt_mappings = {
-      \ 'PrtSelectMove("j")':   ['<c-n>', '<down>'],
-      \ 'PrtSelectMove("k")':   ['<c-p>', '<up>'],
-      \ 'PrtHistory(-1)':       ['<c-k>'],
-      \ 'PrtHistory(1)':        ['<c-j>'],
-      \ }
-let g:ctrlp_regexp = 1
-
-let g:ackprg = 'ag --nogroup --nocolor --column'
+" let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " In command-line mode, C-a jumps to beginning (to match C-e)
 cnoremap <C-a> <Home>
+
+" http://vimcasts.org/e/14
+map <leader>f :CommandT<cr>
+map <leader>F :CommandT %%<cr>
+map <leader>b :CommandTBuffer<cr>
+let g:CommandTMaxHeight=20
+let g:CommandTMinHeight=4
+let g:CommandTMaxFiles=20000
 
 " ignore Rubinius, Sass cache files
 set wildignore+=tmp/**,*.rbc,.rbx,*.scssc,*.sassc
