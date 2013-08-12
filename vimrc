@@ -145,9 +145,11 @@ cnoremap <C-a> <Home>
 map <leader>f :CommandT<cr>
 map <leader>F :CommandT %%<cr>
 map <leader>b :CommandTBuffer<cr>
-let g:CommandTMaxHeight=20
+let g:CommandTMaxHeight=10
 let g:CommandTMinHeight=4
 let g:CommandTMaxFiles=20000
+" let g:CommandTMatchWindowAtTop=1
+" let g:CommandTMatchWindowReverse=1
 
 " ignore Rubinius, Sass cache files
 set wildignore+=tmp/**,*.rbc,.rbx,*.scssc,*.sassc
