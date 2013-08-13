@@ -132,14 +132,6 @@ Uses the vim `numbers` plugin to provide relative and absolute line numbers.
 See the [numbers github project](https://github.com/myusuf3/numbers.vim) for
 more information.
 
-### Tabular
-
-In visual mode:
-
-* `:Tabularize assignment`
-* `:Tabularize argument_list`
-* `:Tabularize /=>`
-
 ### Fugitive
 
 * `:Gcommit`
