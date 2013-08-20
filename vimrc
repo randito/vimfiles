@@ -27,7 +27,8 @@ set showcmd     " show partial commands below the status line
 set shell=bash  " avoids munging PATH under zsh
 let g:is_bash=1 " default shell syntax
 set history=200 " remember more Ex commands
-set scrolloff=3 " have some context around the current line always on screen
+
+set scrolloff=10 " have some context around the current line always on screen
 
 " Allow backgrounding buffers without writing them, and remember marks/undo
 " for backgrounded buffers
