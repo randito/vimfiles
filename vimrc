@@ -22,13 +22,19 @@ set synmaxcol=800           " don't try to highlight long lines
 
 set nonumber    " line numbers aren't needed
 set ruler       " show the cursor position all the time
-set cursorline  " highlight the line of the cursor
 set showcmd     " show partial commands below the status line
 set shell=bash  " avoids munging PATH under zsh
 let g:is_bash=1 " default shell syntax
 set history=200 " remember more Ex commands
 
 set scrolloff=10 " have some context around the current line always on screen
+
+" Highlight cursor line.
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
 
 " Allow backgrounding buffers without writing them, and remember marks/undo
 " for backgrounded buffers
@@ -224,6 +230,7 @@ set foldlevel=1         "this is just what i use
 " mouse!
 set mouse=a
 set mousehide
+set ttymouse=xterm2     " resize panes in tmux with mouse
 
 " No swap files
 set noswapfile
