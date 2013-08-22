@@ -273,7 +273,7 @@ autocmd FileType json set equalprg=json_reformat
 set nofoldenable
 
 " Use the system clipboard as the default
-set clipboard=unnamed
-
-
+if $TMUX == ''
+  set clipboard+=unnamed
+endif
 
