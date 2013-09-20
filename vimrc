@@ -16,8 +16,11 @@ filetype plugin indent on
 runtime macros/matchit.vim  " enables % to cycle through `if/else/endif`
 
 syntax enable
+
+let &t_Co=256
 set background=dark
 color Monokai
+
 set synmaxcol=800           " don't try to highlight long lines
 
 set nonumber    " line numbers aren't needed
