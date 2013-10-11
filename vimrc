@@ -129,6 +129,9 @@ map Q gq
 
 let mapleader=","
 
+" From https://www.destroyallsoftware.com/file-navigation-in-vim.html
+nnoremap <leader><leader> <c-^>
+
 " paste lines from unnamed register and fix indentation
 nmap <leader>p pV`]=
 nmap <leader>P PV`]=
@@ -220,6 +223,8 @@ nnoremap <leader>W <C-w>v<C-w>l
 
 "" Close window
 nnoremap <leader>q <c-w>q
+nnoremap <leader>x :bdel<cr>
+
 
 "folding settings
 set foldmethod=indent   "fold based on indent
