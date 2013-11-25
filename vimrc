@@ -139,6 +139,10 @@ nnoremap <leader><leader> <c-^>
 nmap <leader>p pV`]=
 nmap <leader>P PV`]=
 
+" From http://statico.github.io/vim.html
+nmap <C-n> :bnext<CR>
+nmap <C-p> :bprev<CR>
+
 " " yank/paste to system register
 " map <leader>ys "*y<cr>
 " map <leader>ps "*p<cr>
@@ -222,7 +226,9 @@ nnoremap <leader>a :Ack!
 nnoremap <leader>v V`]
 
 ""  Create new split
-nnoremap <leader>W <C-w>v<C-w>l
+nnoremap <leader>V <C-w>v<C-w>l
+
+nmap <leader>W :setlocal wrap!<CR>:setlocal wrap?<CR>
 
 "" Close window
 nnoremap <leader>q <c-w>q
