@@ -232,8 +232,12 @@ nmap <leader>W :setlocal wrap!<CR>:setlocal wrap?<CR>
 
 "" Close window
 nnoremap <leader>q <c-w>q
-nnoremap <leader>x :bdel<cr>
+nnoremap <leader>x :bdel %<cr>
+nnoremap <leader>J :set filetype=json<cr>:%!python -m json.tool<cr>
 
+" From https://github.com/technicalpickles/pickled-vim/blob/master/home/.vimrc
+" Yank from the cursor to the end of the line, to be consistent with C and D.
+nnoremap Y y$
 
 "folding settings
 set foldmethod=indent   "fold based on indent
@@ -286,7 +290,8 @@ autocmd FileType json set equalprg=json_reformat
 " Disable folding
 set nofoldenable
 
-" Use the system clipboard as the default
+" See http://spin.atomicobject.com/2012/01/28/less-perplexing-terminal-multiplexing-with-tmux/
+" for fixing system clipboards under tmux
 if $TMUX == ''
   set clipboard+=unnamed
 endif
