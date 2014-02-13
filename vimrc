@@ -153,7 +153,9 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 " select whole file
 map <leader>sa ggVG
 
-" let g:ackprg = 'ag --nogroup --nocolor --column'
+""  Ack (but really the_silver_searcher)
+nnoremap <leader>a :Ack!
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " In command-line mode, C-a jumps to beginning (to match C-e)
 cnoremap <C-a> <Home>
@@ -219,8 +221,6 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 set pastetoggle=<F3>
 
-""  Ack
-nnoremap <leader>a :Ack!
 
 ""  Reselect pasted text
 nnoremap <leader>v V`]
