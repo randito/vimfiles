@@ -50,7 +50,7 @@ Using rbenv, I needed to rebuild vim and the Command-T plugin using the same ver
 
 See [this excellent post](http://jeroenbourgois.be/command-t-macvim-and-rvm/) for more information.
 
-### Ack
+### Ack (uses the_silver_searcher under the hood)
 
 * `:Ack -w foo_bar`
 * `:Ack!` - search, but don't jump to first match
