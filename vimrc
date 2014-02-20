@@ -75,6 +75,8 @@ set ignorecase                    " searches are case insensitive...
 set smartcase                     " ... unless they contain at least one capital letter
 set gdefault                      " have :s///g flag by default on
 set showmatch
+nmap n nzz
+nmap N Nzz
 
 " Time out on key codes but not mappings.
 " Basically this makes terminal Vim work sanely.
