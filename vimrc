@@ -182,8 +182,18 @@ set wildignore+=node_modules/**
 set wildmenu
 set wildmode=longest:full,full
 
-" Nerdtree
+" Coffeescript support
+" https://github.com/kchmck/vim-coffee-script
+autocmd BufWritePost *.coffee silent make!
+if has("gui_macvim")
+  autocmd QuickFixCmdPost * nested cwindow
+else
+  autocmd QuickFixCmdPost * nested cwindow | redraw!
+end
+map <leader>cc :CoffeeCompile vert 4<cr>
+map <leader>cw :CoffeeWatch vert 4<cr>
 
+" Nerdtree
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
 map <leader>n :NERDTreeToggle<CR> :NERDTreeMirror<CR>
 map <leader>N :NERDTreeFind<cr>
