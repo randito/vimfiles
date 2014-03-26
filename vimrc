@@ -190,8 +190,9 @@ if has("gui_macvim")
 else
   autocmd QuickFixCmdPost * nested cwindow | redraw!
 end
-map <leader>cc :CoffeeCompile vert 4<cr>
-map <leader>cw :CoffeeWatch vert 4<cr>
+vmap <leader>cc <esc>:'<,'>:CoffeeCompile vert 2<CR>
+map <leader>cc :CoffeeCompile vert 2<CR>
+map <leader>cw :CoffeeWatch vert 2<CR>
 
 " Nerdtree
 let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
