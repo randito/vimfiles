@@ -50,6 +50,17 @@ Using rbenv, I needed to rebuild vim and the Command-T plugin using the same ver
 
 See [this excellent post](http://jeroenbourgois.be/command-t-macvim-and-rvm/) for more information.
 
+#### Rbenv, Brew, Command-T, and Vim
+
+Getting Command-T to work with brew, rbenv, and vim is not for the faint of
+heart.
+
+Here is what I had to do to get it to work:
+
+* Install system wide ruby using rbenv
+* Reinstall vim using brew: brew install vim --override-system-vi --with-ruby
+* Rebuild command-t using the system rbenv ruby.
+
 ### Ack (uses the_silver_searcher under the hood)
 
 * `:Ack -w foo_bar`
