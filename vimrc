@@ -145,6 +145,19 @@ nmap <leader>P PV`]=
 nmap <C-n> :bnext<CR>
 nmap <C-p> :bprev<CR>
 
+" http://reefpoints.dockyard.com/2013/09/26/vim-moving-lines-aint-hard.html
+" Normal mode
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-k> :m .-2<CR>==
+
+" Insert mode
+inoremap <C-j> <ESC>:m .+1<CR>==gi
+inoremap <C-k> <ESC>:m .-2<CR>==gi
+
+" Visual mode
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
 " " yank/paste to system register
 " map <leader>ys "*y<cr>
 " map <leader>ps "*p<cr>
