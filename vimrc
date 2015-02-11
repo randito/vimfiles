@@ -57,7 +57,7 @@ set nowrap                        " don't wrap lines
 set tabstop=2                     " a tab is two spaces
 set shiftwidth=2                  " an autoindent (with <<) is two spaces
 set expandtab                     " use spaces, not tabs
-set list                          " Show invisible characters
+" set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
 " Joining lines
 if v:version > 703 || v:version == 703 && has("patch541")
@@ -65,7 +65,7 @@ if v:version > 703 || v:version == 703 && has("patch541")
 endif
 set nojoinspaces                  " Use only 1 space after "." when joining lines, not 2
 " Indicator chars
-set listchars=tab:▸\ ,extends:❯,precedes:❮
+set listchars=trail:·
 set showbreak=↪\
 
 "" Searching
@@ -145,7 +145,6 @@ nmap <leader>P PV`]=
 nmap <C-n> :bnext<CR>
 nmap <C-p> :bprev<CR>
 
-" http://reefpoints.dockyard.com/2013/09/26/vim-moving-lines-aint-hard.html
 " Normal mode
 nnoremap <C-j> :m .+1<CR>==
 nnoremap <C-k> :m .-2<CR>==
